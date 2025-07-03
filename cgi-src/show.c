@@ -25,7 +25,7 @@ main ()
   char *record = getenv ("record");
   char *hash = getenv ("hash");
   char *query = getenv ("QUERY_STRING");
-  // This is an HTML comment. It's useful for debugging to see if your
+  // This is an HTML comment. It's useful for debugging to see if
   // environment variables got through.
   printf ("  <!-- Environment variables:\n");
   printf ("       db: %s\n", db);
@@ -38,21 +38,7 @@ main ()
   // to match the output in the cgi-src/tests/expected/PART_show_all.txt
   // file. Note that each line in the data.txt file should correspond to
   // two "col" divs, and all but the last line should be followed by a
-  // "w-100" div. The overall framework of the body should look like this
-  // (with exactly 2 spaces before the opening < character of each line):
-  //    <body>
-  //      <div class="container">
-  //        <br />
-  //        <h2 class="mb-0">Database Records</h2>
-  //        <div class="row">
-  //          <div class="col py-md-2 border bg-light">PART_hello.txt</div>
-  //          <div class="col py-md-2 border bg-light">94079f...</div>
-  //          <div class="w-100"></div>
-  //          <div class="col py-md-2 border bg-light">PART_show_all.txt</div>
-  //          <div class="col py-md-2 border bg-light">9e5543...</div>
-  //        </div>
-  //      </div>
-  //    </body>
+  // "w-100" div. 
 
   printf ("  <body>\n");
   printf ("    <div class=\"container\">\n");
@@ -140,20 +126,6 @@ main ()
   printf ("  </body>\n");
 
   fclose (file);
-
-  // TODO [MIN]: Once you have the basic structure working, extend it to
-  // read in environment variables (db, record, hash, and QUERY_STRING).
-  // From a logic standpoint, if QUERY_STRING is set, use that and split it
-  // apart at the & character. For example, the QUERY_STRING might look like:
-  //   db=foo.txt&record=2&hash=9e5543354d4592db8272b3c3e14953770df88ba3
-  // If the QUERY_STRING is not set, look for the db, record, and hash
-  // environment variables independently. If the hash variable is set,
-  // compare its value with the hash value for the specified record. (If
-  // record is not set, then ignore the hash variable.) If the hash does not
-  // match, add this code just after the hash value from the database (put
-  // a space before the <span and no space between </span></div>):
-  //    <span class="badge badge-danger">MISMATCH</span>
-
   printf ("\n</html>\n");
 
   return 0;
