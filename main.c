@@ -1,9 +1,3 @@
-/*
- * COMP 3400: Template project driver
- *
- * Name:
- */
-
 #include <assert.h>
 #include <getopt.h>
 #include <netdb.h>
