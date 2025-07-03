@@ -30,22 +30,7 @@ cgi_response (char *uri, char *version, char *method, char *query,
 
   // TODO [PART]: If the URI exists and is executable, run it as a separate
   // process, redirecting its STDOUT back to this process. You can then use
-  // that resulting string to determine the Content-Length to send back. As
-  // an example, here would be the full response to return for
-  // cgi-bin/hello.cgi (assuming HTTP/1.0 and CRLF means "\r\n"). Don't print
-  // the quotes:
-  //   "HTTP/1.0 200 OK" CRLF
-  //   "Content-Type: text/html; charset: UTF-8" CRLF
-  //   "Content-Length: 95" CRLF
-  //   CRLF
-  //   "<html>\n"
-  //   "<head>\n"
-  //   "  <title>Hello world demo</title>\n"
-  //   "</head>\n"
-  //   "\n"
-  //   "<h2>Hello world!</h2>\n"
-  //   "</body>\n"
-  //   "</html>\n"
+  // that resulting string to determine the Content-Length to send back.
 
   char *response = NULL;
   if (uri != NULL)
