@@ -220,17 +220,4 @@ cgi_response (char *uri, char *version, char *method, char *query,
       response = strdup ("HTTP/1.0 404 Not Found" CRLF CRLF);
     }
   return response;
-
-  // TODO [FULL]: Set the environment variables needed for the CGI programs
-  // located in cgi-bin. To do this, you will need to use either execve()
-  // or execle() when running the CGI program, using an array of string
-  // pairs. For example, the following array would set the db and record
-  // environment variables:
-  //
-  //   char *env[] = { "db=foo.txt", "record=2", NULL };
-  //
-  // If the request is a GET request, you should only set the QUERY_STRING
-  // variable to be the query parameter. For POST requests, you will need
-  // to look through the body of the HTTP request, splitting based on the
-  // boundary values (see the project description for an example).
 }
